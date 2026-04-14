@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capsule CRM - Concept HR Solutions</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#2D3436;line-height:1.7;max-width:800px;margin:0 auto;padding:0 16px;background:#fff}
+.header{padding:24px 0 0}
+.header h1{font-size:28px;font-weight:600;color:#0f222d}
+.header p{font-size:14px;color:#636E72;margin-top:4px}
+.tabs{display:flex;gap:0;border-bottom:2px solid #eee;margin-top:16px;position:sticky;top:0;background:#fff;z-index:20}
+.tab{padding:12px 24px;cursor:pointer;font-size:15px;font-weight:500;color:#636E72;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.15s}
+.tab:hover{color:#2D3436}
+.tab.active{color:#0f222d;border-bottom-color:#0f222d}
+.tc{display:none}
+.tc.active{display:block}
+.sb{position:sticky;top:46px;z-index:10;background:#fff;padding:12px 0;border-bottom:1px solid #eee}
+.sb input{width:100%;padding:10px 14px;border:1px solid #ccc;border-radius:8px;font-size:15px;background:#fff;color:#2D3436}
+.sb input:focus{outline:none;border-color:#0f222d;box-shadow:0 0 0 2px rgba(15,34,45,0.15)}
+.sc{font-size:13px;color:#636E72;margin-top:6px}
+.sec{border-bottom:1px solid #eee;padding:4px 0}
+.sh{display:flex;align-items:center;gap:8px;padding:12px 0;cursor:pointer;user-select:none}
+.sh h2{font-size:18px;font-weight:500;flex:1}
+.sn{background:#0f222d;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0}
+.ch{transition:transform 0.2s;font-size:18px;color:#999}
+.ch.open{transform:rotate(90deg)}
+.bd{padding:0 0 16px 36px;display:none}
+.bd.open{display:block}
+.sub-h{font-size:16px;font-weight:500;margin:16px 0 8px;color:#2D3436}
+.ft{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:14px}
+.ft th{text-align:left;padding:6px 10px;background:#0f222d;color:#fff;font-weight:500;font-size:13px}
+.ft td{padding:6px 10px;border-bottom:1px solid #eee}
+.ft tr:nth-child(even) td{background:#f9f9f9}
+.step{display:flex;gap:10px;margin:6px 0;align-items:flex-start}
+.step-n{background:#0f222d;color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;margin-top:2px}
+.step-c{flex:1}
+.step-t{font-weight:500;font-size:14px}
+.step-d{font-size:13px;color:#636E72;margin-top:2px}
+.tip{background:#f0f4f6;border-left:3px solid #0f222d;padding:8px 12px;margin:12px 0;font-size:13px;color:#0f222d}
+.warn{background:#fdf0ee;border-left:3px solid #ba3521;padding:8px 12px;margin:12px 0;font-size:13px;color:#ba3521}
+p{margin:6px 0;font-size:14px}
+.footer{margin-top:24px;padding:16px 0;border-top:2px solid #0f222d;font-size:13px;color:#636E72;text-align:center}
+.loom{position:relative;padding-bottom:56.25%;height:0;margin:12px 0;border-radius:8px;overflow:hidden;background:#000}
+.loom iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.ns{margin:16px 0}
+.ns h4{font-size:14px;font-weight:500;color:#0f222d;margin:12px 0 6px;padding-bottom:4px;border-bottom:1px solid #eee}
+.ns ul{margin:4px 0 12px 20px;font-size:14px}
+.ns li{margin:3px 0;color:#2D3436}
+.ns p{font-size:14px;margin:4px 0}
+.ai{display:flex;gap:8px;padding:4px 0;font-size:14px}
+.aw{font-weight:500;color:#0f222d;min-width:70px}
+@media(max-width:600px){body{padding:0 12px}.bd{padding:0 0 12px 12px}.tab{padding:10px 16px;font-size:14px}}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Capsule CRM</h1>
+<p>Concept HR Solutions — Time Assist</p>
+</div>
+<div class="tabs">
+<div class="tab active" id="t1">Top Tips</div>
+<div class="tab" id="t2">Session Recording</div>
+</div>
+<div class="tc active" id="tab-guide">
+<div class="sb">
+<input type="text" id="search" placeholder="Search notes (e.g. data tag, tracks, tasks, transpond)" />
+<div class="sc" id="searchCount"></div>
+</div>
+<div id="sections">
+
+<div class="sec" data-content="data tag retained client custom field renewal date package breathe hr information visible">
+<div class="sh"><span class="sn">1</span><h2>Use DataTags for retained client information</h2><span class="ch">&#9654;</span></div>
+<div class="bd">
+<p>A DataTag is a tag with custom fields attached. The fields only appear when the tag is applied to a contact, keeping things clean for everyone else.</p>
+<p>The <strong>Retained Client</strong> tag has been converted to a DataTag with three fields:</p>
+<table class="ft"><tr><th>Field</th><th>Type</th><th>What it captures</th></tr>
+<tr><td>Renewal Date</td><td>Date</td><td>When the retainer is due for renewal</td></tr>
+<tr><td>Package</td><td>Dropdown</td><td>Historic, Thank You, Session, Bespoke</td></tr>
+<tr><td>BreatheHR</td><td>Checkbox</td><td>Whether the client uses BreatheHR</td></tr>
+</table>
+<p>To view or edit these fields: open the contact, click Edit, scroll to the Retained Client section, and fill in the details.</p>
+<div class="tip">Add a description to any custom field that is not obvious. For example, Renewal Date has "When the renewal is due" — this helps future team members understand what goes in each field.</div>
+</div></div>
+
+<div class="sec" data-content="source custom field text dropdown single select multi-select typo search reporting track">
+<div class="sh"><span class="sn">2</span><h2>Use dropdowns instead of free text wherever possible</h2><span class="ch">&#9654;</span></div>
+<div class="bd">
+<p>Free-text fields are useful when the information is different every time. But if you find yourself typing the same things repeatedly (like contact sources), switch to a single-select dropdown.</p>
+<p><strong>Why this matters:</strong> Dropdowns let you filter and report accurately. Free text does not — one typo ("GRP" vs "grp" vs "GRP network") splits the data into three buckets that Capsule treats as different values.</p>
+<p class="sub-h">When to use which</p>
+<table class="ft"><tr><th>Field type</th><th>Use when</th></tr>
+<tr><td>Single select (dropdown)</td><td>There is a fixed set of options and you pick one. E.g. Source, Package level</td></tr>
+<tr><td>Multi-select</td><td>There is a fixed set of options and you might pick several. E.g. Services offered</td></tr>
+<tr><td>Text (free form)</td><td>The answer is different every time. Always tick "searchable" so you can still find it</td></tr>
+<tr><td>Date</td><td>Dates. E.g. Renewal Date, Start Date</td></tr>
+<tr><td>Checkbox</td><td>Yes or no. E.g. "Uses BreatheHR"</td></tr>
+</table>
+<div class="tip">The Source field on contacts is currently free text. Consider converting it to a single-select dropdown with your main sources (GRP, Referral, Website, LinkedIn, Networking, etc.) so you can report on where contacts come from.</div>
+</div></div>
+
+<div class="sec" data-content="tracks onboarding task sequence project workflow repeatable welcome email go cardless">
+<div class="sh"><span class="sn">3</span><h2>Set up tracks for repeatable processes</h2><span class="ch">&#9654;</span></div>
+<div class="bd">
+<p>A track is a sequence of tasks that fires automatically when applied to an opportunity or project. Use them for any process you follow the same way every time.</p>
+<p>An <strong>Onboarding</strong> track has been created on projects as a starting example:</p>
+<table class="ft"><tr><th>#</th><th>Task</th><th>Timing</th></tr>
+<tr><td>1</td><td>Send welcome email</td><td>Day 0 (start)</td></tr>
+<tr><td>2</td><td>Go Cardless / billing setup</td><td>After previous task</td></tr>
+<tr><td>3</td><td>Schedule HR MOT</td><td>After previous task</td></tr>
+</table>
+<p>To apply a track: open a project, click "Add Track" (underneath the stage bar), and select the track.</p>
+<p class="sub-h">Key things to know</p>
+<p><strong>Task visibility:</strong> By default, the next task only appears after the previous one is ticked off. This keeps the list clean but means you need to complete tasks in order.</p>
+<p><strong>Working days:</strong> Always set multi-day gaps to weekdays, not calendar days. Otherwise tasks land on weekends.</p>
+<p><strong>Editing tracks:</strong> Changes made to a track in Account Settings only apply to newly applied tracks. Tracks already applied to existing projects are fixed — to update them, delete the track from the project and reapply it.</p>
+<div class="tip">Once you have your client onboarding process documented outside of Capsule, translate it into a track with specific tasks and day offsets. You can always edit and refine it later.</div>
+</div></div>
+
+<div class="sec" data-content="task categories client work sales networking headspace filter focus priority urgency">
+<div class="sh"><span class="sn">4</span><h2>Use task categories to organise your workload</h2><span class="ch">&#9654;</span></div>
+<div class="bd">
+<p>Task categories let you tag each task by the type of work it is. This helps you focus — when you are in "client work" mode, filter to see only client work tasks.</p>
+<p><strong>Think about headspace, not action type.</strong> Categorising by "Call" or "Email" is not useful — a call could be a sales call, a client call, or a networking intro. Categorise by the type of work instead:</p>
+<p>Examples: Client Work, Sales / BD, Networking, Admin, Marketing</p>
+<p class="sub-h">How to use them</p>
+<div class="step"><span class="step-n">1</span><div class="step-c"><div class="step-t">Go to Calendar and Tasks</div><div class="step-d">Switch to Schedule view (top right).</div></div></div>
+<div class="step"><span class="step-n">2</span><div class="step-c"><div class="step-t">Filter by category</div><div class="step-d">Click the Category filter and select the type of work you want to focus on.</div></div></div>
+<div class="step"><span class="step-n">3</span><div class="step-c"><div class="step-t">Work through the list</div><div class="step-d">Complete tasks, drag and drop to reschedule, tick off when done.</div></div></div>
+<p>You can rename or delete the default categories (Call, Email, Follow-up) in Account Settings and replace them with ones that match how you actually work.</p>
+</div></div>
+
+<div class="sec" data-content="calendar tasks schedule view due date time drag drop today focus paper pen">
+<div class="sh"><span class="sn">5</span><h2>Tasks: schedule view, dates not times</h2><span class="ch">&#9654;</span></div>
+<div class="bd">
+<p>The Calendar and Tasks view is your daily to-do list. Use <strong>Schedule view</strong> (not Week or Month) — it shows tasks as an expandable list, which is much easier to scan than a calendar grid.</p>
+<p class="sub-h">Daily routine</p>
+<div class="step"><span class="step-n">1</span><div class="step-c"><div class="step-t">Open Calendar and Tasks in Schedule view</div><div class="step-d">This shows everything due today and coming up.</div></div></div>
+<div class="step"><span class="step-n">2</span><div class="step-c"><div class="step-t">Work through today's tasks</div><div class="step-d">Click a task to see the linked contact, opportunity, or project.</div></div></div>
+<div class="step"><span class="step-n">3</span><div class="step-c"><div class="step-t">Reschedule anything not done</div><div class="step-d">Drag and drop tasks to the next day or a future date. Do not leave them overdue.</div></div></div>
+<p class="sub-h">Dates, not times</p>
+<p>Do not add times to Capsule tasks. Meetings with specific times belong in your Outlook calendar. Capsule tasks are things you need to get done that day — the time does not matter. Adding times creates unnecessary admin when things shift around.</p>
+<div class="tip">This is the replacement for the paper and pen. Every enquiry, every follow-up, every action — if it needs doing, it is a Capsule task with a due date. If it is not in Capsule, it will get forgotten.</div>
+</div></div>
+
+<div class="sec" data-content="transpond email marketing unsubscribe inactive contact limit 1000 subscription payment campaign">
+<div class="sh"><span class="sn">6</span><h2>Transpond: managing contacts and costs</h2><span class="ch">&#9654;</span></div>
+<div class="bd">
+<p>Transpond charges based on the number of <strong>active</strong> contacts, not the total in Capsule. The brackets are: up to 250 (free), up to 1,000, then above 1,000.</p>
+<p><strong>If you are only marketing to 200 people, you should not be paying for the 1,000+ bracket.</strong> Mark contacts you are not actively emailing as Inactive in Transpond — they stay in Capsule but do not count towards your Transpond subscription.</p>
+<p class="sub-h">When someone unsubscribes</p>
+<p>They are automatically marked as unsubscribed and will not receive any more emails. The contact stays in Capsule — nothing is deleted. You do not need to do anything.</p>
+<p>To manually change a contact's Transpond status: open the contact, find the Transpond section on the right-hand side, click the dropdown, and set to Active, Inactive, or Unsubscribed.</p>
+</div></div>
+
+</div>
+</div>
+
+<div class="tc" id="tab-sessions">
+<h2 style="font-size:20px;font-weight:500;margin:16px 0 4px;color:#0f222d">Capsule CRM Spring Clean — April 2026</h2>
+<p style="margin:0 0 12px;font-size:14px;color:#636E72">30-minute review session with Steven Allan</p>
+<div class="loom"><iframe src="https://www.loom.com/embed/713471db8bd34695a8e0db1950320654" allowfullscreen></iframe></div>
+<div class="ns">
+<h4>Session summary</h4>
+<p>Steven is using Capsule consistently — contacts are up to date, tags applied, sales pipeline active, projects organised by service type. Main areas for improvement: moving from paper to Capsule tasks, setting up tracks for repeatable processes, and getting more value from DataTags and task categories. First Transpond campaign being prepared.</p>
+<h4>What was covered</h4>
+<ul>
+<li>Retained Client tag converted to a DataTag with three custom fields: Renewal Date, Package (Historic/Thank You/Session/Bespoke), and BreatheHR (checkbox)</li>
+<li>DataTag fields demonstrated live on a retained client record (Serge Barth / AIC)</li>
+<li>Custom field best practice: use dropdowns (single/multi-select) instead of free text wherever possible for clean reporting</li>
+<li>Source field discussed — currently free text, recommended converting to a dropdown for tracking where contacts come from</li>
+<li>Onboarding track created on projects: Send welcome email, Go Cardless billing, Schedule HR MOT</li>
+<li>Track behaviour explained: tasks appear sequentially, changes in Account Settings do not affect already-applied tracks, always use weekdays for day offsets</li>
+<li>Task categories explained: organise by type of work (client work, sales, networking) not by action (call, email) — helps with focus and headspace</li>
+<li>Task management tips: use Schedule view, set dates not times, drag and drop to reschedule, filter by category or due date for laser focus</li>
+<li>Transpond subscription management: mark non-marketing contacts as Inactive to avoid paying for unused slots. Unsubscribed contacts stay in Capsule safely.</li>
+</ul>
+<h4>Actions</h4>
+<div class="ai"><span class="aw">Steven:</span> Go through retained clients and fill in the Renewal Date, Package, and BreatheHR fields on each</div>
+<div class="ai"><span class="aw">Steven:</span> Consider converting the Source field from free text to a single-select dropdown with main sources (GRP, Referral, Website, LinkedIn, etc.)</div>
+<div class="ai"><span class="aw">Steven:</span> Document the client onboarding process, then build it as a track in Account Settings</div>
+<div class="ai"><span class="aw">Steven:</span> Rename the default task categories (Call, Email, Follow-up) to match how you work (Client Work, Sales/BD, Networking, Admin)</div>
+<div class="ai"><span class="aw">Steven:</span> Start using Calendar and Tasks in Schedule view as the daily to-do list — replace paper and pen</div>
+<div class="ai"><span class="aw">Steven:</span> Mark non-marketing contacts as Inactive in Transpond to manage subscription costs</div>
+<div class="ai"><span class="aw">Jaanika:</span> Send the recording and session notes to Steven</div>
+</div>
+</div>
+
+<div class="footer">
+Capsule CRM - Concept HR Solutions - Prepared by Time Assist<br>
+If you get stuck or something does not look right, contact Jaanika at j.okk [at] timeassist.co.uk
+</div>
+
+<script>
+document.getElementById('t1').addEventListener('click',function(){
+document.getElementById('t1').classList.add('active');
+document.getElementById('t2').classList.remove('active');
+document.getElementById('tab-guide').classList.add('active');
+document.getElementById('tab-sessions').classList.remove('active');
+});
+document.getElementById('t2').addEventListener('click',function(){
+document.getElementById('t2').classList.add('active');
+document.getElementById('t1').classList.remove('active');
+document.getElementById('tab-sessions').classList.add('active');
+document.getElementById('tab-guide').classList.remove('active');
+});
+document.querySelectorAll('.sh').forEach(function(el){
+el.addEventListener('click',function(){
+var b=this.nextElementSibling;
+var c=this.querySelector('.ch');
+b.classList.toggle('open');
+c.classList.toggle('open');
+});
+});
+var si=document.getElementById('search');
+var sc=document.getElementById('searchCount');
+var ss=document.querySelectorAll('.sec');
+si.addEventListener('input',function(){
+var q=this.value.toLowerCase().trim();
+if(!q){ss.forEach(function(s){s.style.display='';});sc.textContent='';return;}
+var v=0;
+ss.forEach(function(s){
+var b=s.querySelector('.bd');
+var h=s.querySelector('h2');
+var t=(s.dataset.content+' '+h.textContent+' '+b.textContent).toLowerCase();
+if(t.indexOf(q)!==-1){s.style.display='';b.classList.add('open');s.querySelector('.ch').classList.add('open');v++;}
+else{s.style.display='none';b.classList.remove('open');s.querySelector('.ch').classList.remove('open');}
+});
+sc.textContent=v+' section'+(v!==1?'s':'')+' found';
+});
+</script>
+</body>
+</html>
